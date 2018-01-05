@@ -1,10 +1,6 @@
 %使用中文:方法1
-\documentclass[UTF8]{ctexart}
-%使用中文:方法2
-%\documentclass{article}
-%\usepackage{xeCJK}
-%\setCJKmainfont{KaiTi}
-%
+\documentclass{article}
+\usepackage[UTF8]{ctex}
 %这里是导言区
 %
 \title{C++拷贝控制}
@@ -62,15 +58,15 @@
     numberstyle=\small\color{gray}, %\small    
     captionpos=b,
     rulecolor=\color{black},
-	 rulesepcolor= \color{ red!20!green!20!blue!20} ,
-	 backgroundcolor=\color{white},
+    rulesepcolor= \color{ red!20!green!20!blue!20} ,
+	backgroundcolor=\color{white},
     escapeinside=``, % 英文分号中可写入中文
-	 basicstyle=\footnotesize, %\tt
-	 directivestyle=\tt,
-	 identifierstyle=\tt,
-	 commentstyle=\tt,
-	 stringstyle=\tt,
-	 keywordstyle=\color{blue}\tt
+    basicstyle=\footnotesize, %\tt
+    directivestyle=\tt,
+    identifierstyle=\tt,
+    commentstyle=\tt,
+    stringstyle=\tt,
+    keywordstyle=\color{blue}\tt
 }
 
 %设置代码字体
@@ -79,13 +75,13 @@
 \setmonofont{Courier New}
 
 %算法
-\usepackage[ruled]{algorithm2e}
+%\usepackage[ruled]{algorithm2e}
 
 \begin{document}
 \maketitle
 \tableofcontents
 
-\section{你好中国}
+\section{拷贝控制}
 中国在East Asia.
 \subsection{Hello Beijing}
 北京是capital of China.
@@ -100,6 +96,17 @@ Hello World! 你好啊!!!
 这行是从vscode中添加的
 
 
+%method 1
+\begin{verbatim}
+#include <iostream>
+int main(int argc, char** argv)
+{
+std::cout<<"Hello World"<<endl;
+return 0;
+}
+\end{verbatim}
+
+%method 2
 \begin{minted}[linenos,frame=lines]{c++}
 int main()
 {
@@ -108,6 +115,7 @@ int main()
 }
 \end{minted}
 
+%method 3
 \begin{lstlisting}[caption= hello world]
 #include <iostream>
 int main(int argc, char** argv)
@@ -117,14 +125,7 @@ int main(int argc, char** argv)
 \end{lstlisting}
 
 
-\begin{verbatim}
-#include <iostream>
-int main(int argc, char** argv)
-{
-    std::cout<<"Hello World"<<endl;
-    return 0;
-}
-\end{verbatim}
+
 
 \begin{algorithm}[H]
 \caption{How to write algorithms}
@@ -140,28 +141,8 @@ initialization\;
         go back to the beginning of current section\;
     }
 }
-
 \end{algorithm}
-
-\begin{table}[htbp]
-\centering
-\begin{tabular}{|l|c|r|}
-\hline
-操作系统 & 发行版 & 编辑器\\
-\hline
-Windows & MikTeX & TexMakerX \\
-\hline
-Unix/Linux & teTeX & Kile \\
-\hline
-MacOS  & MaxTeX  & TeXShop \\
-\hline
-通用 & TeX Live & TeXworks \\
-\hline
-\end{tabular}
-\caption{Editor}
-\label{tbl:editor}
-\end{table}
-
 
 
 \end{document}
+
