@@ -26,6 +26,11 @@
 
 \usepackage[american]{babel}
 \usepackage{microtype}
+\usepackage{savesym}
+
+\usepackage[pdftex, bookmarks, colorlinks=true, linkcolor=black, 
+    plainpages = false,pdfpagemode = UseNone, pdfstartview = FitH, 
+    citecolor = ac, urlcolor = ac, filecolor = ac]{hyperref}
 
 %行间距
 \usepackage{setspace}
@@ -77,9 +82,11 @@
 %算法
 %\usepackage[ruled]{algorithm2e}
 
+%%%%%正文开始%%%%%%
 \begin{document}
 \maketitle
 \tableofcontents
+
 
 \section{拷贝控制}
 中国在East Asia.
@@ -101,8 +108,8 @@ Hello World! 你好啊!!!
 #include <iostream>
 int main(int argc, char** argv)
 {
-std::cout<<"Hello World"<<endl;
-return 0;
+    std::cout<<"Hello World"<<endl;
+    return 0;    
 }
 \end{verbatim}
 
@@ -125,24 +132,5 @@ int main(int argc, char** argv)
 \end{lstlisting}
 
 
-
-
-\begin{algorithm}[H]
-\caption{How to write algorithms}
-\KwIn{this text}
-\KwOut{How to write algorithm with \LaTeX2e}
-initialization\;
-\While{not at end of this document}{
-    read current\;
-    \eIf{understand}{
-        go to next section\;
-        current section becomes this one\;
-    }{
-        go back to the beginning of current section\;
-    }
-}
-\end{algorithm}
-
-
 \end{document}
-
+%%%%%正文结束%%%%%%
